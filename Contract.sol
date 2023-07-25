@@ -3,21 +3,15 @@
  *Submitted for verification at Etherscan.io on 2021-06-09
 */
 
-/**
- *Submitted for verification at BscScan.com on 2021-06-06
-*/
-
 pragma solidity ^0.6.12;
 // SPDX-License-Identifier: Unlicensed
 interface IERC20 {
 
     function totalSupply() external view returns (uint256);
-
     /**
      * @dev Returns the amount of tokens owned by `account`.
      */
     function balanceOf(address account) external view returns (uint256);
-
     /**
      * @dev Moves `amount` tokens from the caller's account to `recipient`.
      *
@@ -26,7 +20,6 @@ interface IERC20 {
      * Emits a {Transfer} event.
      */
     function transfer(address recipient, uint256 amount) external returns (bool);
-
     /**
      * @dev Returns the remaining number of tokens that `spender` will be
      * allowed to spend on behalf of `owner` through {transferFrom}. This is
@@ -35,7 +28,6 @@ interface IERC20 {
      * This value changes when {approve} or {transferFrom} are called.
      */
     function allowance(address owner, address spender) external view returns (uint256);
-
     /**
      * @dev Sets `amount` as the allowance of `spender` over the caller's tokens.
      *
@@ -47,22 +39,17 @@ interface IERC20 {
      * condition is to first reduce the spender's allowance to 0 and set the
      * desired value afterwards:
      * https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729
-     *
      * Emits an {Approval} event.
      */
     function approve(address spender, uint256 amount) external returns (bool);
-
     /**
      * @dev Moves `amount` tokens from `sender` to `recipient` using the
      * allowance mechanism. `amount` is then deducted from the caller's
      * allowance.
-     *
      * Returns a boolean value indicating whether the operation succeeded.
-     *
      * Emits a {Transfer} event.
      */
     function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
-
     /**
      * @dev Emitted when `value` tokens are moved from one account (`from`) to
      * another (`to`).
@@ -1152,8 +1139,4 @@ contract RichQuackV2 is Context, IERC20, Ownable {
         _reflectFee(rFee, tFee);
         emit Transfer(sender, recipient, tTransferAmount);
     }
-
-
-
-
 }
